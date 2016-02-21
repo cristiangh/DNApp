@@ -28,4 +28,8 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
 }

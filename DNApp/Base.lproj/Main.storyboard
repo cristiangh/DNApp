@@ -354,7 +354,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dmJ-Tp-LFP" id="m9t-Ns-39k">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jbe-A9-NjQ">
@@ -514,125 +514,150 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="msX-Dj-pxu">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRO-rw-cI5" customClass="TPKeyboardAvoidingScrollView">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ps-be-1CJ" userLabel="ButtonExit">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                    <connections>
+                                                        <action selector="closeButtonDidTouch:" destination="5T4-B0-zSK" eventType="touchUpInside" id="bvO-0o-l54"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mez-UT-vVb" customClass="DesignableView" customModule="DNApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojp-VV-brA">
+                                                            <rect key="frame" x="100" y="20" width="80" height="28"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="80" id="KT6-jF-tbH"/>
+                                                                <constraint firstAttribute="height" constant="28" id="a2a-kn-oDD"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designer News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-Aw-qZE">
+                                                            <rect key="frame" x="69" y="51" width="142" height="28"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="9bj-VY-Xd0"/>
+                                                                <constraint firstAttribute="width" constant="142" id="wL5-Wj-pG2"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="w6i-1E-avK" customClass="DesignableTextField" customModule="DNApp" customModuleProvider="target">
+                                                            <rect key="frame" x="15" y="118" width="250" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="44" id="SfG-E2-5Js"/>
+                                                                <constraint firstAttribute="width" constant="250" id="g5A-3t-OOq"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                    <real key="value" value="50"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </textField>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="2ov-qz-tHo" customClass="DesignableTextField" customModule="DNApp" customModuleProvider="target">
+                                                            <rect key="frame" x="15" y="169" width="250" height="44"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="44" id="KDH-ki-tfW"/>
+                                                                <constraint firstAttribute="width" constant="250" id="oDn-4j-0NA"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                    <real key="value" value="50"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </textField>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFA-uF-a5X" customClass="DesignableButton" customModule="DNApp" customModuleProvider="target">
+                                                            <rect key="frame" x="15" y="221" width="250" height="44"/>
+                                                            <color key="backgroundColor" red="0.17254901960784313" green="0.38823529411764707" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                                            <state key="normal" title="Log in">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="loginButtonDidTouch:" destination="5T4-B0-zSK" eventType="touchUpInside" id="ULc-V2-0ng"/>
+                                                            </connections>
+                                                        </button>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="FEN-sb-Wwi">
+                                                            <rect key="frame" x="30" y="178" width="25" height="25"/>
+                                                        </imageView>
+                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-mail" translatesAutoresizingMaskIntoConstraints="NO" id="fUN-H1-5Lf">
+                                                            <rect key="frame" x="30" y="131" width="26" height="18"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="w6i-1E-avK" firstAttribute="centerX" secondItem="mez-UT-vVb" secondAttribute="centerX" id="2Ri-Cj-5Zx"/>
+                                                        <constraint firstItem="1jR-Aw-qZE" firstAttribute="top" secondItem="ojp-VV-brA" secondAttribute="bottom" constant="3" id="3wq-SQ-qa7"/>
+                                                        <constraint firstItem="1jR-Aw-qZE" firstAttribute="centerX" secondItem="mez-UT-vVb" secondAttribute="centerX" id="50Q-YC-Ti6"/>
+                                                        <constraint firstAttribute="height" constant="280" id="EAb-Iu-qdP"/>
+                                                        <constraint firstAttribute="bottom" secondItem="fFA-uF-a5X" secondAttribute="bottom" constant="15" id="HFM-mN-gdn"/>
+                                                        <constraint firstItem="fFA-uF-a5X" firstAttribute="top" secondItem="2ov-qz-tHo" secondAttribute="bottom" constant="8" id="Hfn-P9-8rd"/>
+                                                        <constraint firstItem="2ov-qz-tHo" firstAttribute="centerX" secondItem="mez-UT-vVb" secondAttribute="centerX" id="JiM-J2-5Nt"/>
+                                                        <constraint firstItem="w6i-1E-avK" firstAttribute="top" secondItem="1jR-Aw-qZE" secondAttribute="bottom" constant="39" id="VcI-6w-1xT"/>
+                                                        <constraint firstItem="fFA-uF-a5X" firstAttribute="leading" secondItem="mez-UT-vVb" secondAttribute="leading" constant="15" id="b1e-Zb-3Ut"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fFA-uF-a5X" secondAttribute="trailing" constant="15" id="bLt-eW-Dbj"/>
+                                                        <constraint firstItem="ojp-VV-brA" firstAttribute="centerX" secondItem="mez-UT-vVb" secondAttribute="centerX" id="cQA-z5-AmH"/>
+                                                        <constraint firstItem="2ov-qz-tHo" firstAttribute="top" secondItem="w6i-1E-avK" secondAttribute="bottom" constant="7" id="ccC-Q9-s9N"/>
+                                                        <constraint firstItem="ojp-VV-brA" firstAttribute="top" secondItem="mez-UT-vVb" secondAttribute="top" constant="20" id="duB-W4-auj"/>
+                                                        <constraint firstAttribute="width" constant="280" id="yJU-Ve-Bn1"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" red="0.18039215689999999" green="0.1960784314" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5Ps-be-1CJ" firstAttribute="centerX" secondItem="BRO-rw-cI5" secondAttribute="centerX" id="Bx7-uv-SXW"/>
+                                                <constraint firstItem="5Ps-be-1CJ" firstAttribute="leading" secondItem="BRO-rw-cI5" secondAttribute="leading" id="GvJ-Gr-ZQt"/>
+                                                <constraint firstItem="mez-UT-vVb" firstAttribute="centerX" secondItem="BRO-rw-cI5" secondAttribute="centerX" id="IKf-hb-yXQ"/>
+                                                <constraint firstItem="5Ps-be-1CJ" firstAttribute="top" secondItem="BRO-rw-cI5" secondAttribute="top" id="RFX-oj-HRu"/>
+                                                <constraint firstItem="5Ps-be-1CJ" firstAttribute="centerY" secondItem="BRO-rw-cI5" secondAttribute="centerY" id="eGj-DM-3WV"/>
+                                                <constraint firstAttribute="trailing" secondItem="5Ps-be-1CJ" secondAttribute="trailing" id="fnk-kg-REF"/>
+                                                <constraint firstItem="mez-UT-vVb" firstAttribute="centerY" secondItem="BRO-rw-cI5" secondAttribute="centerY" id="g0l-NU-t7y"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Ps-be-1CJ" secondAttribute="bottom" id="rbI-eP-iNf"/>
+                                            </constraints>
+                                        </scrollView>
+                                    </subviews>
                                     <color key="backgroundColor" red="0.23921568627450979" green="0.25490196078431371" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="BRO-rw-cI5" secondAttribute="bottom" id="0uX-CU-4VK"/>
+                                        <constraint firstItem="BRO-rw-cI5" firstAttribute="leading" secondItem="msX-Dj-pxu" secondAttribute="leading" id="14L-J1-iyh"/>
+                                        <constraint firstAttribute="trailing" secondItem="BRO-rw-cI5" secondAttribute="trailing" id="BqU-6y-r3b"/>
+                                        <constraint firstItem="BRO-rw-cI5" firstAttribute="top" secondItem="msX-Dj-pxu" secondAttribute="top" id="FzF-Py-hhV"/>
+                                    </constraints>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ps-be-1CJ" userLabel="ButtonExit">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <connections>
-                                    <action selector="closeButtonDidTouch:" destination="5T4-B0-zSK" eventType="touchUpInside" id="bvO-0o-l54"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mez-UT-vVb" customClass="DesignableView" customModule="DNApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="144" width="280" height="280"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojp-VV-brA">
-                                        <rect key="frame" x="100" y="20" width="80" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="KT6-jF-tbH"/>
-                                            <constraint firstAttribute="height" constant="28" id="a2a-kn-oDD"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designer News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-Aw-qZE">
-                                        <rect key="frame" x="69" y="51" width="142" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="9bj-VY-Xd0"/>
-                                            <constraint firstAttribute="width" constant="142" id="wL5-Wj-pG2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="w6i-1E-avK" customClass="DesignableTextField" customModule="DNApp" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="118" width="250" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="SfG-E2-5Js"/>
-                                            <constraint firstAttribute="width" constant="250" id="g5A-3t-OOq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <real key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" background="input-outline" translatesAutoresizingMaskIntoConstraints="NO" id="2ov-qz-tHo" customClass="DesignableTextField" customModule="DNApp" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="169" width="250" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="KDH-ki-tfW"/>
-                                            <constraint firstAttribute="width" constant="250" id="oDn-4j-0NA"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                <real key="value" value="50"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="rightPadding">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFA-uF-a5X" customClass="DesignableButton" customModule="DNApp" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="221" width="250" height="44"/>
-                                        <color key="backgroundColor" red="0.17254901960784313" green="0.38823529411764707" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
-                                        <state key="normal" title="Log in">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="loginButtonDidTouch:" destination="5T4-B0-zSK" eventType="touchUpInside" id="ULc-V2-0ng"/>
-                                        </connections>
-                                    </button>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-password" translatesAutoresizingMaskIntoConstraints="NO" id="FEN-sb-Wwi">
-                                        <rect key="frame" x="30" y="178" width="25" height="25"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon-mail" translatesAutoresizingMaskIntoConstraints="NO" id="fUN-H1-5Lf">
-                                        <rect key="frame" x="30" y="131" width="26" height="18"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="w6i-1E-avK" firstAttribute="centerX" secondItem="mez-UT-vVb" secondAttribute="centerX" id="2Ri-Cj-5Zx"/>
-                                    <constraint firstItem="1jR-Aw-qZE" firstAttribute="top" secondItem="ojp-VV-brA" secondAttribute="bottom" constant="3" id="3wq-SQ-qa7"/>
-                                    <constraint firstItem="1jR-Aw-qZE" firstAttribute="centerX" secondItem="mez-UT-vVb" secondAttribute="centerX" id="50Q-YC-Ti6"/>
-                                    <constraint firstAttribute="height" constant="280" id="EAb-Iu-qdP"/>
-                                    <constraint firstItem="2ov-qz-tHo" firstAttribute="centerX" secondItem="mez-UT-vVb" secondAttribute="centerX" id="JiM-J2-5Nt"/>
-                                    <constraint firstItem="w6i-1E-avK" firstAttribute="top" secondItem="1jR-Aw-qZE" secondAttribute="bottom" constant="39" id="VcI-6w-1xT"/>
-                                    <constraint firstItem="ojp-VV-brA" firstAttribute="centerX" secondItem="mez-UT-vVb" secondAttribute="centerX" id="cQA-z5-AmH"/>
-                                    <constraint firstItem="2ov-qz-tHo" firstAttribute="top" secondItem="w6i-1E-avK" secondAttribute="bottom" constant="7" id="ccC-Q9-s9N"/>
-                                    <constraint firstItem="ojp-VV-brA" firstAttribute="top" secondItem="mez-UT-vVb" secondAttribute="top" constant="20" id="duB-W4-auj"/>
-                                    <constraint firstAttribute="width" constant="280" id="yJU-Ve-Bn1"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.18039215689999999" green="0.1960784314" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="mez-UT-vVb" firstAttribute="centerY" secondItem="GYh-bp-2Jl" secondAttribute="centerY" id="WZT-Dg-5C6"/>
                             <constraint firstItem="vo0-l2-eJI" firstAttribute="top" secondItem="GYh-bp-2Jl" secondAttribute="top" id="bVi-Vo-hwh"/>
                             <constraint firstAttribute="trailing" secondItem="vo0-l2-eJI" secondAttribute="trailing" id="cEW-WR-rq0"/>
-                            <constraint firstItem="mez-UT-vVb" firstAttribute="centerX" secondItem="GYh-bp-2Jl" secondAttribute="centerX" id="fPS-GS-cBG"/>
                             <constraint firstItem="vOd-SU-P4f" firstAttribute="top" secondItem="vo0-l2-eJI" secondAttribute="bottom" id="tIu-2g-5WH"/>
                             <constraint firstItem="vo0-l2-eJI" firstAttribute="leading" secondItem="GYh-bp-2Jl" secondAttribute="leading" id="uEP-fc-OOO"/>
                         </constraints>
@@ -684,7 +709,7 @@
                                 <rect key="frame" x="0.0" y="86" width="320" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gtj-oI-f3G" id="qpY-NS-yEV">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UE7-Df-4zd">
@@ -799,7 +824,7 @@
                                 <rect key="frame" x="0.0" y="226" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ClM-oT-FJU" id="A0h-4z-SL1">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="118.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZzK-xQ-1zJ">
