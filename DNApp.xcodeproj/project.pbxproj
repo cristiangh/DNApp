@@ -12,7 +12,6 @@
 		40312BE61C39D3BC0090D6A1 /* DNApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40312BE41C39D3BC0090D6A1 /* DNApp.xcdatamodeld */; };
 		40312BE81C39D3BC0090D6A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40312BE71C39D3BC0090D6A1 /* Assets.xcassets */; };
 		40312BEB1C39D3BC0090D6A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40312BE91C39D3BC0090D6A1 /* LaunchScreen.storyboard */; };
-		4032DC421C7A346D002D4813 /* TPKeyboardAvoiding in Resources */ = {isa = PBXBuildFile; fileRef = 4032DC411C7A346D002D4813 /* TPKeyboardAvoiding */; };
 		404787261C41A3E50055368A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404787251C41A3E50055368A /* SwiftyJSON.swift */; };
 		404787281C41AE010055368A /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404787271C41AE010055368A /* CommentTableViewCell.swift */; };
 		407577261C40CF7A00B8744C /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407577251C40CF7A00B8744C /* CommentsTableViewController.swift */; };
@@ -51,6 +50,10 @@
 		408E4B0C1C3A758500204F54 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E4AEF1C3A758500204F54 /* TransitionZoom.swift */; };
 		408E4B0D1C3A758500204F54 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408E4AF01C3A758500204F54 /* UnwindSegue.swift */; };
 		409B36D51C40398700693297 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409B36D41C40398700693297 /* Data.swift */; };
+		40BE6B8D1C7BA70B00F56895 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BE6B861C7BA70B00F56895 /* TPKeyboardAvoidingCollectionView.m */; };
+		40BE6B8E1C7BA70B00F56895 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BE6B881C7BA70B00F56895 /* TPKeyboardAvoidingScrollView.m */; };
+		40BE6B8F1C7BA70B00F56895 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BE6B8A1C7BA70B00F56895 /* TPKeyboardAvoidingTableView.m */; };
+		40BE6B901C7BA70B00F56895 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BE6B8C1C7BA70B00F56895 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		40EAD82B1C3D9C57005E0729 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAD82A1C3D9C57005E0729 /* StoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +65,6 @@
 		40312BE71C39D3BC0090D6A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40312BEA1C39D3BC0090D6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40312BEC1C39D3BC0090D6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4032DC411C7A346D002D4813 /* TPKeyboardAvoiding */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TPKeyboardAvoiding; path = Spring/TPKeyboardAvoiding; sourceTree = "<group>"; };
 		404787251C41A3E50055368A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Spring/SwiftyJSON.swift; sourceTree = "<group>"; };
 		404787271C41AE010055368A /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		407577251C40CF7A00B8744C /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,15 @@
 		408E4AEF1C3A758500204F54 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		408E4AF01C3A758500204F54 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		409B36D41C40398700693297 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		40BE6B841C7BA70B00F56895 /* DNApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DNApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		40BE6B851C7BA70B00F56895 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		40BE6B861C7BA70B00F56895 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		40BE6B871C7BA70B00F56895 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		40BE6B881C7BA70B00F56895 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		40BE6B891C7BA70B00F56895 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		40BE6B8A1C7BA70B00F56895 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		40BE6B8B1C7BA70B00F56895 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		40BE6B8C1C7BA70B00F56895 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		40EAD82A1C3D9C57005E0729 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +146,7 @@
 		40312BDC1C39D3BC0090D6A1 /* DNApp */ = {
 			isa = PBXGroup;
 			children = (
-				4032DC411C7A346D002D4813 /* TPKeyboardAvoiding */,
+				40BE6B831C7BA6BC00F56895 /* TPKeyboardAvoiding */,
 				408E4AD21C3A758500204F54 /* Spring */,
 				404787251C41A3E50055368A /* SwiftyJSON.swift */,
 				40312BDD1C39D3BC0090D6A1 /* AppDelegate.swift */,
@@ -192,6 +203,22 @@
 				408E4AF01C3A758500204F54 /* UnwindSegue.swift */,
 			);
 			path = Spring;
+			sourceTree = "<group>";
+		};
+		40BE6B831C7BA6BC00F56895 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				40BE6B851C7BA70B00F56895 /* TPKeyboardAvoidingCollectionView.h */,
+				40BE6B861C7BA70B00F56895 /* TPKeyboardAvoidingCollectionView.m */,
+				40BE6B871C7BA70B00F56895 /* TPKeyboardAvoidingScrollView.h */,
+				40BE6B881C7BA70B00F56895 /* TPKeyboardAvoidingScrollView.m */,
+				40BE6B891C7BA70B00F56895 /* TPKeyboardAvoidingTableView.h */,
+				40BE6B8A1C7BA70B00F56895 /* TPKeyboardAvoidingTableView.m */,
+				40BE6B8B1C7BA70B00F56895 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				40BE6B8C1C7BA70B00F56895 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				40BE6B841C7BA70B00F56895 /* DNApp-Bridging-Header.h */,
+			);
+			name = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +282,6 @@
 			files = (
 				408E4AFD1C3A758500204F54 /* Info.plist in Resources */,
 				40312BEB1C39D3BC0090D6A1 /* LaunchScreen.storyboard in Resources */,
-				4032DC421C7A346D002D4813 /* TPKeyboardAvoiding in Resources */,
 				40312BE81C39D3BC0090D6A1 /* Assets.xcassets in Resources */,
 				40312BE31C39D3BC0090D6A1 /* Main.storyboard in Resources */,
 				408E4B001C3A758500204F54 /* LoadingView.xib in Resources */,
@@ -270,15 +296,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				408E4AF71C3A758500204F54 /* DesignableLabel.swift in Sources */,
+				40BE6B901C7BA70B00F56895 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				408E4B061C3A758500204F54 /* SpringImageView.swift in Sources */,
 				408E4AF31C3A758500204F54 /* AutoTextView.swift in Sources */,
 				408E4AFC1C3A758500204F54 /* ImageLoader.swift in Sources */,
 				408199081C3D096D006B0109 /* MenuViewController.swift in Sources */,
 				408E4B011C3A758500204F54 /* Misc.swift in Sources */,
+				40BE6B8E1C7BA70B00F56895 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				408A8E8C1C3BFD53009CFE23 /* LearnViewController.swift in Sources */,
 				404787261C41A3E50055368A /* SwiftyJSON.swift in Sources */,
+				40BE6B8F1C7BA70B00F56895 /* TPKeyboardAvoidingTableView.m in Sources */,
 				409B36D51C40398700693297 /* Data.swift in Sources */,
 				408E4AF41C3A758500204F54 /* BlurView.swift in Sources */,
+				40BE6B8D1C7BA70B00F56895 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				408E4B0D1C3A758500204F54 /* UnwindSegue.swift in Sources */,
 				408E4AFF1C3A758500204F54 /* LoadingView.swift in Sources */,
 				408E4B081C3A758500204F54 /* SpringTextField.swift in Sources */,
@@ -418,12 +448,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DNApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Clear.DNApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DNApp/DNApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -431,12 +464,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = DNApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Clear.DNApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DNApp/DNApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
