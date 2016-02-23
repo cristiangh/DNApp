@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate: class {
+    func menuViewControllerDidTouchTop(controller: MenuViewController)
+    func menuViewControllerDidTouchRecent(controller: MenuViewController)
+}
+
 class MenuViewController: UIViewController {
+    weak var delegate: MenuViewControllerDelegate?
     
     @IBOutlet weak var designView: DesignableView!
 
@@ -29,14 +35,16 @@ class MenuViewController: UIViewController {
         designView.animate()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func topButtonDidTouch(sender: AnyObject) {
+        delegate?.menuViewControllerDidTouchTop(self)
+        closeButtonDidTouch(sender)
     }
-    */
-
+    
+    @IBAction func recentButtonDidTouch(sender: AnyObject) {
+        delegate?.menuViewControllerDidTouchRecent(self)
+        closeButtonDidTouch(sender)
+    }
+    
+    @IBAction func loginButtonDidTouch(sender: AnyObject) {
+    }
 }

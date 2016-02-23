@@ -43,12 +43,12 @@ class StoryTableViewCell: UITableViewCell {
     }
     
     func configureWithStory(story: JSON) {
-        let title = story["title"].string!
-        let badge = story["badge"].string!
-        _ = story["user_portrait_url"].string! // let userPortraitUrl
-        let userDisplayName = story["user_display_name"].string!
-        let userJob = story["user_job"].string!
-        let createdAt = story["created_at"].string!
+        let title = story["title"].string ?? ""
+        let badge = story["badge"].string ?? ""
+        _ = story["user_portrait_url"].string ?? "" // let userPortraitUrl
+        let userDisplayName = story["user_display_name"].string ?? ""
+        let userJob = story["user_job"].string ?? ""
+        let createdAt = story["created_at"].string ?? ""
         let voteCount = story["vote_count"].int!
         let commentCount = story["comment_count"].int!
         
@@ -60,7 +60,7 @@ class StoryTableViewCell: UITableViewCell {
         upvoteButton.setTitle(voteCount.description, forState: UIControlState.Normal)
         commentButton.setTitle(commentCount.description, forState: UIControlState.Normal)
         
-        let comment = story["comment"].string!
+        let comment = story["comment"].string ?? ""
         if let commentTextView = commentTextView {
             commentTextView.text = comment
         }

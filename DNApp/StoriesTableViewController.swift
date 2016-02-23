@@ -8,8 +8,11 @@
 
 import UIKit
 
-class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, MenuViewControllerDelegate {
 
+    var stories: JSON! = []
+    var isFirstTime = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +21,16 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         
 //        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
 //        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        
+        loadStories("", page: 1)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        if isFirstTime {
+            view.showLoading()
+            isFirstTime = false
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -41,13 +54,13 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return stories.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StoryCell") as! StoryTableViewCell
         
-        let story = data[indexPath.row]
+        let story = stories[indexPath.row]
         
         cell.configureWithStory(story)
         
@@ -77,8 +90,43 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         if segue.identifier == "CommentsSegue" {
             let toView = segue.destinationViewController as! CommentsTableViewController
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
-            let story = data[indexPath.row]
+            let story = stories[indexPath.row]
             toView.story = story
         }
+        if segue.identifier == "MenuSegue" {
+            let toView = segue.destinationViewController as! MenuViewController
+            toView.delegate = self
+        }
+    }
+    
+    func loadStories(section: String, page: Int) {
+        DNService.storiesForSection(section, page: page){(JSON)->() in
+            self.stories = JSON["stories"]
+            self.tableView.reloadData()
+            self.view.hideLoading()
+        }
+    }
+    
+    // MARK: MenuViewControllerDelegate
+    
+    func menuViewControllerDidTouchTop(controller: MenuViewController) {
+        view.showLoading()
+        loadStories("", page: 1)
+        navigationItem.title = "Top Stories"
+    }
+    
+    func menuViewControllerDidTouchRecent(controller: MenuViewController) {
+        view.showLoading()
+        loadStories("recent", page: 1)
+        navigationItem.title = "Recent Stories"
     }
 }
+
+
+
+
+
+
+
+
+
