@@ -8,13 +8,27 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+protocol LoginViewControllerDelegate: class {
+    func loginViewControllerDidLogin(controller: LoginViewController)
+}
 
+class LoginViewController: UIViewController {
+    weak var delegate: LoginViewControllerDelegate?
     @IBOutlet weak var dialogView: DesignableView!
+    @IBOutlet weak var emailTextField: DesignableTextField!
+    @IBOutlet weak var passwordTextField: DesignableTextField!
     
     @IBAction func loginButtonDidTouch(sender: AnyObject) {
-        dialogView.animation = "shake"
-        dialogView.animate()
+        DNService.loginWithEmail(emailTextField.text!, password: passwordTextField.text!) { (token) -> () in
+            if let token = token {
+                LocalStore.saveToken(token)
+                self.delegate?.loginViewControllerDidLogin(self)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                self.dialogView.animation = "shake"
+                self.dialogView.animate()
+            }
+        }
     }
     
     @IBAction func closeButtonDidTouch(sender: AnyObject) {

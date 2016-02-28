@@ -11,17 +11,23 @@ import UIKit
 protocol MenuViewControllerDelegate: class {
     func menuViewControllerDidTouchTop(controller: MenuViewController)
     func menuViewControllerDidTouchRecent(controller: MenuViewController)
+    func menuViewControllerDidTouchLogout(controller: MenuViewController)
 }
 
 class MenuViewController: UIViewController {
     weak var delegate: MenuViewControllerDelegate?
     
     @IBOutlet weak var designView: DesignableView!
+    @IBOutlet weak var loginLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if LocalStore.getToken() == nil {
+            loginLabel.text = "Login"
+        } else {
+            loginLabel.text = "Logout"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,5 +52,12 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func loginButtonDidTouch(sender: AnyObject) {
+        if LocalStore.getToken() == nil {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            LocalStore.deleteToken()
+            self.closeButtonDidTouch(self)
+            delegate?.menuViewControllerDidTouchLogout(self)
+        }
     }
 }

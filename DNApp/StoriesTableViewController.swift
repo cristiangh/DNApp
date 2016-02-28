@@ -8,10 +8,13 @@
 
 import UIKit
 
-class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, MenuViewControllerDelegate {
+class StoriesTableViewController: UITableViewController, StoryTableViewCellDelegate, MenuViewControllerDelegate, LoginViewControllerDelegate {
+    
+    @IBOutlet weak var loginButton: UIBarButtonItem!
 
     var stories: JSON! = []
     var isFirstTime = true
+    var section = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,14 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
 //        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
         
         loadStories("", page: 1)
+        
+        if LocalStore.getToken() == nil {
+            loginButton.title = "Login"
+            loginButton.enabled = true
+        } else {
+            loginButton.title = ""
+            loginButton.enabled = false
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -97,6 +108,10 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
             let toView = segue.destinationViewController as! MenuViewController
             toView.delegate = self
         }
+        if segue.identifier == "LoginSegue" {
+            let toView = segue.destinationViewController as! LoginViewController
+            toView.delegate = self
+        }
     }
     
     func loadStories(section: String, page: Int) {
@@ -113,12 +128,26 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
         view.showLoading()
         loadStories("", page: 1)
         navigationItem.title = "Top Stories"
+        section = ""
     }
     
     func menuViewControllerDidTouchRecent(controller: MenuViewController) {
         view.showLoading()
         loadStories("recent", page: 1)
         navigationItem.title = "Recent Stories"
+        section = "recent"
+    }
+    
+    func menuViewControllerDidTouchLogout(controller: MenuViewController) {
+        loadStories(section, page: 1)
+        view.showLoading()
+    }
+    
+    // MARK: LoginViewControllerDelegate
+    
+    func loginViewControllerDidLogin(controller: LoginViewController) {
+        loadStories(section, page: 1)
+        view.showLoading()
     }
 }
 

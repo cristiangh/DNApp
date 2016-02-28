@@ -9,22 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DNApp/DNService.swift"
-            timestampString = "477954431.265887"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "storiesForSection(_:page:response:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "DNApp/Spring/SwiftyJSON.swift"
             timestampString = "477954733.007746"
             startingColumnNumber = "9223372036854775807"
@@ -33,6 +17,54 @@
             endingLineNumber = "70"
             landmarkName = "init(data:options:error:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DNApp/LoginViewController.swift"
+            timestampString = "478342225.646619"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "loginButtonDidTouch(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DNApp.LoginViewController.loginButtonDidTouch (DNApp.LoginViewController)(Swift.AnyObject) -&gt; ()"
+                  moduleName = "DNApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Cristian/Sviluppo/DNApp/DNApp/LoginViewController.swift"
+                  timestampString = "478342225.702051"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DNApp.LoginViewController.(loginButtonDidTouch (DNApp.LoginViewController) -&gt; (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  moduleName = "DNApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Cristian/Sviluppo/DNApp/DNApp/LoginViewController.swift"
+                  timestampString = "478342225.703198"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "55">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

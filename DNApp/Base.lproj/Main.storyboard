@@ -136,6 +136,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="designView" destination="pnu-eY-je9" id="0Be-K8-7Nc"/>
+                        <outlet property="loginLabel" destination="68w-Hk-ZAO" id="J7H-f6-Rqm"/>
+                        <segue destination="5T4-B0-zSK" kind="presentation" identifier="LoginSegue" id="an1-rg-DkN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFz-pn-Wej" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -493,6 +495,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="loginButton" destination="QfZ-oD-6J7" id="XCf-D9-hCt"/>
                         <segue destination="U0e-Wt-1J7" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="aXI-Xh-eNs"/>
                         <segue destination="5T4-B0-zSK" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="ZA1-oI-drI"/>
                         <segue destination="rfa-HX-2nC" kind="presentation" identifier="WebSegue" modalPresentationStyle="overCurrentContext" id="Mv4-TH-d2W"/>
@@ -671,6 +674,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="dialogView" destination="mez-UT-vVb" id="g7m-ec-tMC"/>
+                        <outlet property="emailTextField" destination="w6i-1E-avK" id="ZgU-s7-L1w"/>
+                        <outlet property="passwordTextField" destination="2ov-qz-tHo" id="C0i-QI-oLZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dg9-Vo-b1P" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -959,6 +964,7 @@
         <image name="input-outline" width="7" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="an1-rg-DkN"/>
         <segue reference="1QD-bV-dY3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@
 		40312BEB1C39D3BC0090D6A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40312BE91C39D3BC0090D6A1 /* LaunchScreen.storyboard */; };
 		404787261C41A3E50055368A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404787251C41A3E50055368A /* SwiftyJSON.swift */; };
 		404787281C41AE010055368A /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404787271C41AE010055368A /* CommentTableViewCell.swift */; };
+		406B62251C7FB2220087DC52 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406B62241C7FB2220087DC52 /* LocalStore.swift */; };
 		407577261C40CF7A00B8744C /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407577251C40CF7A00B8744C /* CommentsTableViewController.swift */; };
 		408199081C3D096D006B0109 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408199071C3D096D006B0109 /* MenuViewController.swift */; };
 		4081990A1C3D0A32006B0109 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408199091C3D0A32006B0109 /* WebViewController.swift */; };
@@ -143,6 +144,7 @@
 		40312BEC1C39D3BC0090D6A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		404787251C41A3E50055368A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Spring/SwiftyJSON.swift; sourceTree = "<group>"; };
 		404787271C41AE010055368A /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		406B62241C7FB2220087DC52 /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		407577251C40CF7A00B8744C /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		408199071C3D096D006B0109 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		408199091C3D0A32006B0109 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				40312BEC1C39D3BC0090D6A1 /* Info.plist */,
 				40312BE41C39D3BC0090D6A1 /* DNApp.xcdatamodeld */,
 				40BE6BB51C7BB15100F56895 /* DNService.swift */,
+				406B62241C7FB2220087DC52 /* LocalStore.swift */,
 			);
 			path = DNApp;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				408E4AFB1C3A758500204F54 /* DesignableView.swift in Sources */,
 				408A8E8A1C3BC33A009CFE23 /* LoginViewController.swift in Sources */,
 				408E4AF81C3A758500204F54 /* DesignableTabBarController.swift in Sources */,
+				406B62251C7FB2220087DC52 /* LocalStore.swift in Sources */,
 				408E4AF51C3A758500204F54 /* DesignableButton.swift in Sources */,
 				40312BE61C39D3BC0090D6A1 /* DNApp.xcdatamodeld in Sources */,
 				408E4B0C1C3A758500204F54 /* TransitionZoom.swift in Sources */,
