@@ -64,5 +64,15 @@ class StoryTableViewCell: UITableViewCell {
         if let commentTextView = commentTextView {
             commentTextView.text = comment
         }
+
+        let storyId = story["id"].int!
+        if LocalStore.isStoryUpvoted(storyId) {
+            upvoteButton.setImage(UIImage(named: "icon-upvote-active"), forState: UIControlState.Normal)
+            upvoteButton.setTitle(String(voteCount + 1), forState: UIControlState.Normal)
+        } else {
+            upvoteButton.setImage(UIImage(named: "icon-upvote"), forState: UIControlState.Normal)
+            upvoteButton.setTitle(String(voteCount), forState: UIControlState.Normal)
+        }
+
     }
 }

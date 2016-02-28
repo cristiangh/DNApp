@@ -59,6 +59,7 @@
 		40BE6BAF1C7BB10100F56895 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 40BE6B9C1C7BB09E00F56895 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		40BE6BB61C7BB15100F56895 /* DNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BE6BB51C7BB15100F56895 /* DNService.swift */; };
 		40EAD82B1C3D9C57005E0729 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EAD82A1C3D9C57005E0729 /* StoryTableViewCell.swift */; };
+		40FD0FD41C8348EA00221806 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD0FD31C8348EA00221806 /* ReplyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +195,7 @@
 		40BE6B911C7BB09E00F56895 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		40BE6BB51C7BB15100F56895 /* DNService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNService.swift; sourceTree = "<group>"; };
 		40EAD82A1C3D9C57005E0729 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
+		40FD0FD31C8348EA00221806 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,12 +235,13 @@
 				404787251C41A3E50055368A /* SwiftyJSON.swift */,
 				40312BDD1C39D3BC0090D6A1 /* AppDelegate.swift */,
 				409B36D41C40398700693297 /* Data.swift */,
+				40EAD82A1C3D9C57005E0729 /* StoryTableViewCell.swift */,
+				408A8E8D1C3C2F9B009CFE23 /* StoriesTableViewController.swift */,
+				404787271C41AE010055368A /* CommentTableViewCell.swift */,
 				407577251C40CF7A00B8744C /* CommentsTableViewController.swift */,
+				40FD0FD31C8348EA00221806 /* ReplyViewController.swift */,
 				408199091C3D0A32006B0109 /* WebViewController.swift */,
 				408199071C3D096D006B0109 /* MenuViewController.swift */,
-				40EAD82A1C3D9C57005E0729 /* StoryTableViewCell.swift */,
-				404787271C41AE010055368A /* CommentTableViewCell.swift */,
-				408A8E8D1C3C2F9B009CFE23 /* StoriesTableViewController.swift */,
 				408A8E891C3BC33A009CFE23 /* LoginViewController.swift */,
 				408A8E8B1C3BFD53009CFE23 /* LearnViewController.swift */,
 				40312BE11C39D3BC0090D6A1 /* Main.storyboard */,
@@ -462,6 +465,7 @@
 				408E4B011C3A758500204F54 /* Misc.swift in Sources */,
 				40BE6B8E1C7BA70B00F56895 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				408A8E8C1C3BFD53009CFE23 /* LearnViewController.swift in Sources */,
+				40FD0FD41C8348EA00221806 /* ReplyViewController.swift in Sources */,
 				404787261C41A3E50055368A /* SwiftyJSON.swift in Sources */,
 				40BE6B8F1C7BA70B00F56895 /* TPKeyboardAvoidingTableView.m in Sources */,
 				409B36D51C40398700693297 /* Data.swift in Sources */,

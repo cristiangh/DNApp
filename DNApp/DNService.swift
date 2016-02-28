@@ -49,6 +49,17 @@ struct DNService {
         }
     }
     
+    static func storyForId(storyId: Int, response: (JSON)->()) {
+        let urlString = baseURL + ResourcePath.StoryId(storyId: storyId).description
+        let parameters = [
+        "client_id": clientID
+        ]
+        Alamofire.request(.GET, urlString, parameters: parameters).responseJSON { resp in
+            let story = JSON(data: resp.data!)
+            response(story)
+        }
+    }
+    
     static func loginWithEmail(email: String, password: String, response: (token: String?)->()) {
         let urlString = baseURL + ResourcePath.Login.description
         let parameters = [
@@ -75,6 +86,16 @@ struct DNService {
         upvoteWithUrlString(urlString, token: token, response: response)
     }
     
+    static func replyStoryWithId(storyId: Int, token: String, body: String, response: (successful: Bool)->()) {
+        let urlString = baseURL + ResourcePath.StoryReply(storyId: storyId).description
+        replyWithUrlString(urlString, token: token, body: body, response: response)
+    }
+    
+    static func replyCommentWithId(commentId: Int, token: String, body: String, response: (successfull: Bool)->()) {
+        let urlString = baseURL + ResourcePath.CommentReply(commentId: commentId).description
+        replyWithUrlString(urlString, token: token, body: body, response: response)
+    }
+    
     private static func upvoteWithUrlString(urlString: String, token: String, response: (successful: Bool) -> ()) {
         let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
         request.HTTPMethod = "POST"
@@ -83,6 +104,22 @@ struct DNService {
         Alamofire.request(request).responseJSON { resp in
             let successful = resp.result.error?.code == 200
             response(successful: successful)
+        }
+    }
+    
+    private static func replyWithUrlString(urlString: String, token: String, body: String, response: (successful: Bool) -> ()) {
+        let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+        request.HTTPMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.HTTPBody = "comment[body]=\(body)".dataUsingEncoding(NSUTF8StringEncoding)
+        
+        Alamofire.request(request).responseJSON { resp in
+            let json = JSON(resp.data!)
+            if let _ = json["comment"].string {
+                response(successful: true)
+            } else {
+                response(successful: false)
+            }
         }
     }
 }

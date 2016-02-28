@@ -70,13 +70,9 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StoryCell") as! StoryTableViewCell
-        
         let story = stories[indexPath.row]
-        
         cell.configureWithStory(story)
-        
         cell.delegate = self
-        
         return cell
     }
     
@@ -88,7 +84,17 @@ class StoriesTableViewController: UITableViewController, StoryTableViewCellDeleg
     // MARK: StoryTableViewCellDelegate
     
     func storyTableViewCellDidTouchUpvote(cell: StoryTableViewCell, sender: AnyObject) {
-        // TODO: implement Upvote
+        if let token = LocalStore.getToken() {
+            let indexPath = tableView.indexPathForCell(cell)!
+            let story = stories[indexPath.row]
+            let storyId = story["id"].int!
+            DNService.upvoteCommentWithId(storyId, token: token){(successful)->() in
+                LocalStore.saveUpvotedStory(storyId)
+                cell.configureWithStory(story)
+            }
+        } else {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        }
     }
     
     func storyTableViewCellDidTouchComment(cell: StoryTableViewCell, sender: AnyObject) {

@@ -321,7 +321,7 @@
         <!--Comment-->
         <scene sceneID="Ry4-GX-qSA">
             <objects>
-                <viewController id="YZp-4V-Kfi" userLabel="Comment" sceneMemberID="viewController">
+                <viewController id="YZp-4V-Kfi" userLabel="Comment" customClass="ReplyViewController" customModule="DNApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9no-cn-Q92"/>
                         <viewControllerLayoutGuide type="bottom" id="kxY-JR-eeP"/>
@@ -330,19 +330,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="6-Comment" translatesAutoresizingMaskIntoConstraints="NO" id="RV3-GR-hDl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yI3-Np-beF" userLabel="ButtonExit">
-                                <rect key="frame" x="6" y="20" width="45" height="42"/>
-                                <connections>
-                                    <segue destination="rdH-nZ-gQy" kind="unwind" unwindAction="unwindToViewController:" id="yzA-9y-JFC"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjI-fW-RUl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="s6U-GN-oEe"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.16862745098039217" green="0.38431372549019605" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Reply" id="BrC-Q4-Pfx">
+                                        <barButtonItem key="leftBarButtonItem" image="icon-close" id="7zg-cT-xCL">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="rdH-nZ-gQy" kind="unwind" unwindAction="unwindToViewController:" id="g7i-JS-dac"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Send" id="Rgd-yu-tor">
+                                            <color key="tintColor" red="0.21568627450980393" green="0.72941176470588232" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="sendButtonDidTouch:" destination="YZp-4V-Kfi" id="70p-Wd-QGj"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hlz-M5-2NX">
+                                <rect key="frame" x="10" y="74" width="300" height="484"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LjI-fW-RUl" firstAttribute="top" secondItem="j4n-gT-e2T" secondAttribute="top" id="2oR-bf-zJ9"/>
+                            <constraint firstItem="kxY-JR-eeP" firstAttribute="top" secondItem="Hlz-M5-2NX" secondAttribute="bottom" constant="10" id="EHg-Au-0cz" customClass="KeyboardLayoutConstraint" customModule="DNApp" customModuleProvider="target"/>
+                            <constraint firstItem="Hlz-M5-2NX" firstAttribute="leading" secondItem="j4n-gT-e2T" secondAttribute="leading" constant="10" id="XLK-LP-hwn"/>
+                            <constraint firstItem="LjI-fW-RUl" firstAttribute="leading" secondItem="j4n-gT-e2T" secondAttribute="leading" id="YNz-Wt-EU1"/>
+                            <constraint firstItem="Hlz-M5-2NX" firstAttribute="top" secondItem="LjI-fW-RUl" secondAttribute="bottom" constant="10" id="ajI-Lk-zws"/>
+                            <constraint firstAttribute="trailing" secondItem="Hlz-M5-2NX" secondAttribute="trailing" constant="10" id="rIg-uH-RNi"/>
+                            <constraint firstAttribute="trailing" secondItem="LjI-fW-RUl" secondAttribute="trailing" id="spT-xS-Tfn"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="replyTextView" destination="Hlz-M5-2NX" id="bG3-I5-7Jd"/>
+                        <segue destination="5T4-B0-zSK" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="o3t-fX-B7x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dK2-bX-uAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="rdH-nZ-gQy" userLabel="Exit" sceneMemberID="exit"/>
@@ -362,7 +400,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dmJ-Tp-LFP" id="m9t-Ns-39k">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jbe-A9-NjQ">
@@ -720,7 +758,7 @@
                                 <rect key="frame" x="0.0" y="86" width="320" height="140"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gtj-oI-f3G" id="qpY-NS-yEV">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="139"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UE7-Df-4zd">
@@ -835,7 +873,7 @@
                                 <rect key="frame" x="0.0" y="226" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ClM-oT-FJU" id="A0h-4z-SL1">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="118.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZzK-xQ-1zJ">
@@ -933,6 +971,9 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="lUK-6N-zSd">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                     <connections>
                         <segue destination="YZp-4V-Kfi" kind="presentation" identifier="ReplySegue" id="rIh-tq-WqE"/>
                     </connections>
@@ -943,7 +984,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6-Comment" width="320" height="568"/>
         <image name="action-share" width="19" height="27"/>
         <image name="bg-credits" width="280" height="140"/>
         <image name="big-credits" width="47" height="44"/>
@@ -964,7 +1004,7 @@
         <image name="input-outline" width="7" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="an1-rg-DkN"/>
-        <segue reference="1QD-bV-dY3"/>
+        <segue reference="Mv4-TH-d2W"/>
+        <segue reference="o3t-fX-B7x"/>
     </inferredMetricsTieBreakers>
 </document>
